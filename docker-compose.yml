@@ -1,0 +1,47 @@
+version: '3.9'
+services:
+  builder:
+    image: azul/zulu-openjdk:11
+    volumes:
+      - .:/opt/build
+      - type: volume
+        source: app_home
+        target: /opt/app
+        volume:
+          nocopy: true
+      - type: volume
+        source: gradle_home
+        target: /opt/.gradle:rw
+    working_dir: /opt/build
+    command: "/opt/build/gradlew copyDeps --gradle-user-home=/opt/.gradle -x test"
+  cleanBuilder:
+    image: azul/zulu-openjdk:11
+    volumes:
+      - .:/opt/build
+      - type: volume
+        source: app_home
+        target: /opt/app
+        volume:
+          nocopy: true
+      - type: volume
+        source: gradle_home
+        target: /opt/.gradle:rw
+    working_dir: /opt/build
+    command: "/opt/build/gradlew cleanDeps copyDeps --gradle-user-home=/opt/.gradle -x test"
+  frontend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - app_home:/opt/app
+    restart: always
+    external_links:
+      - nginx:pub.gmarket.co.kr
+    networks:
+      - techblog-backend_default
+volumes:
+  gradle_home:
+  app_home:
+networks:
+  techblog-backend_default:
+    external: true

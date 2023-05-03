@@ -1,0 +1,8 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+
+api:
+  host: http://pub.gmarket.co.kr
