@@ -11,7 +11,8 @@
 ```
 
 - Backend 구동
- > [gmarket-techblog-backend git 참조](https://github.com/jayjlee29/gmarket-techblog-backend)
+  - [[Gmarket Techblog] docker-compose를 이용하여 로컬 개발환경 구성하기(Part1) 참조](https://dev.gmarket.com/72)
+  - [[Github] gmarket-techblog-backend 참조](https://github.com/jayjlee29/gmarket-techblog-backend)
 
 ## Build
 
