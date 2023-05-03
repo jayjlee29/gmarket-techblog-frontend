@@ -1,4 +1,4 @@
-# docker compose를 활용한 개발 환경 구축
+# Part 2 : docker-compose를 이용하여 spring boot 프로젝트 연결하기
 
 ## 준비사항
 
