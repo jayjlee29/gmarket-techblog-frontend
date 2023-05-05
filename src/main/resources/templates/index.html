@@ -63,11 +63,11 @@
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon3">Input your message</span>
                     <input type="text" id="payload" value="hello - dev.gmarket.co.kr" class="form-control" aria-describedby="basic-addon3 basic-addon4">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="javascript:onPublish($('#payload').val())">Publish</button>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="javascript:onPublish($('#payload').val())">Publish to serverTopic</button>
 
                 </div>
             </div>
-            <button class="btn btn-outline-secondary" type="button" id="button-addon3" onclick="javascript:onGetData('serverTopic')">Get</button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon3" onclick="javascript:onGetData('serverTopic')">Get serverTopic's payload </button>
             <div id="results">
                 <ul id="subscribed" />
             </div>
